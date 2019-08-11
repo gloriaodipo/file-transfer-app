@@ -1,4 +1,6 @@
-# README
+# File Transfer App
+
+[![Build Status](https://travis-ci.com/gloriaodipo/file-transfer-app.svg?branch=develop)](https://travis-ci.com/gloriaodipo/file-transfer-app) 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
