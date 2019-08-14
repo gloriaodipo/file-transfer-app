@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'index/index'
+  root to: 'documents#index'
   devise_for :users
-
-  get '/index', to: 'index#index'
+  
+  resources :documents, only: %i[index show create new]
+  get '/index', to: "index#index"
 end

@@ -14,3 +14,33 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+addEventListener("upload", event => {
+    const { target, detail } = event
+    const { id, file } = detail
+    target.insertAdjacentHTML("beforeupload", `
+      <div id="upload-${id}" class="upload">
+        <span class="upload__filename">${file.name}</span>
+      </div>
+    `)
+  })
+   
+  addEventListener("upload:begin", event => {
+    const { id } = event.detail
+    const element = document.getElementById(`upload-${id}`)
+  })
+   
+  addEventListener("upload:error", event => {
+    event.preventDefault()
+    const { id, error } = event.detail
+    const element = document.getElementById(`upload-${id}`)
+    element.classList.add("upload--error")
+    element.setAttribute("title", error)
+  })
+   
+  addEventListener("upload:complete", event => {
+    const { id } = event.detail
+    const element = document.getElementById(`upload-${id}`)
+    element.classList.add("upload--complete")
+  })
+  

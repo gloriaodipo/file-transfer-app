@@ -35,6 +35,13 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'webpacker', '~> 4.x'
 
+# For env variables
+gem "figaro"
+
+# For file uploads to cloud services
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
