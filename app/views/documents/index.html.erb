@@ -1,0 +1,28 @@
+<h1>List of all files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Doc ID </th>
+      <th>File Name </th>
+      <th>File </th>
+      <th>Total </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.id%></td>
+        <td><%= document.file_name%></td>
+        <td>
+          <%document.files.each do |file| %>
+             <li><%= file.filename %></li>
+          <% end %>
+        </td>
+        <td><%= document.files.count%></td>
+        <td><%= link_to "View file", document_path(document) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

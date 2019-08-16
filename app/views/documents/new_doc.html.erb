@@ -1,0 +1,15 @@
+<div>
+  <h2>Upload your documents here</h2>
+  
+  <%= form_for @document, html: {class: 'form'} do |f| %>
+    <div class="field">
+      <%= f.label :file_name %>
+      <%= f.text_field :file_name, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :files %>
+      <%= f.file_field :files, required: true, multiple: true, direct_upload: true %>
+    </div>
+    <%= f.submit "Upload"%>
+  <% end%>
+</div>

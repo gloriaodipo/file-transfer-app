@@ -10,6 +10,24 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "All Files", documents_path %>
+      <%= link_to "Upload Files", new_document_path %>
+    </header>
+    
+    <% flash.each do |message_type, messages| %>
+      <div class="alert alert-<%= message_type %>">
+      <% if messages.instance_of?(String) %>
+        <%= messages %>
+      <% elsif messages.instance_of? Array%>
+        <% messages.each do |message| %>
+          <li><%= message%></li>
+        <% end %>
+        
+      <% end %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
