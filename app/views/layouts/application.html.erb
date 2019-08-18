@@ -11,8 +11,10 @@
 
   <body>
     <header>
-      <%= link_to "All Files", documents_path %>
-      <%= link_to "Upload Files", new_document_path %>
+      <div class="header-topics">
+        <%= link_to "All Files", documents_path, :class => "title-link" %>
+        <%= link_to "Upload Files", new_document_path, :class => "title-link" %>
+      </div>
     </header>
     
     <% flash.each do |message_type, messages| %>
