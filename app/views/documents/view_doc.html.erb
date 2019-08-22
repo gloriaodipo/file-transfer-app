@@ -5,11 +5,11 @@
     <% @document.files.each do |file| %>
       <li>
         <h3><%= file.filename %></h3>
-        <%= link_to "Click to preview", rails_blob_path(file, disposition: "preview"), target: :blank %>
-        <%= link_to "Click to download", rails_blob_path(file, disposition: "attachment") %>
+        <%= link_to "Click to preview", rails_blob_path(file, disposition: "preview"), target: :blank, :class => "title-link" %>
+        <%= link_to "Click to download", rails_blob_path(file, disposition: "attachment"), :class => "title-link" %>
       </li>
     <% end %>
   </div>
 </div>
 
-<%= link_to 'Go back', documents_path %>
+<%= link_to 'Go back', documents_path, :class => "back-btn" %>

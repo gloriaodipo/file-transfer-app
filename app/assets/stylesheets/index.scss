@@ -1,3 +1,27 @@
 // Place all the styles related to the index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+  height: 100%;
+}
+
+html {
+  margin: 100px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.topic {
+  text-decoration: underline;
+}
+
+form {
+  .field {
+    padding: 10px;
+  }
+}
